@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebf3;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff4081;
+            font-size: 2.5em;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+        .no {
+            background-color: #ddd;
+            color: black;
+            position: absolute;
+        }
+        .message {
+            font-size: 1.5em;
+            color: #d63384;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine? 💖</h1>
+    <p class="heart">❤️❤️❤️</p>
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes 💕</button>
+        <button class="no" id="noButton">No 💔</button>
+    </div>
+    <div class="message" id="message">
+        <h2>Yay! 😍</h2>
+        <p>These past few months with you have been absolutely wonderful. 💖</p>
+        <p>Every moment, every laugh, and every conversation has made me so happy.</p>
+        <p>I'm so grateful to have met you and can't wait to make more beautiful memories together! ❤️</p>
+    </div>
+
+    <script>
+        function sayYes() {
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
+
+        document.getElementById("noButton").addEventListener("mouseover", function() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            this.style.left = x + "px";
+            this.style.top = y + "px";
+        });
+    </script>
+</body>
+</html>
